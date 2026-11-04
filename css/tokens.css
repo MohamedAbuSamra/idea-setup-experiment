@@ -1,0 +1,23 @@
+    :root {
+      --current: #db2777;
+      --current-dark: #9d174d;
+      --current-light: #fdf2f8;
+      --current-border: #fbcfe8;
+      --idea: #8b5cf6;
+      --idea-dark: #6d28d9;
+      --idea-light: #f5f3ff;
+      --idea-border: #ddd6fe;
+      --brand: #c2417a;
+      --brand-dark: #8f2a5c;
+      --text: #3f3446;
+      --label: #4a3d52;
+      --muted: #a39aaa;
+      --border: #efe7ef;
+      --error: #e11d48;
+      --error-light: #fff1f2;
+      --success: #10b981;
+      --phone-scale: 1;
+      --web-scale: 1;
+      --frame-color: #1c1420;
+      --notch-safe: 28px;
+    }

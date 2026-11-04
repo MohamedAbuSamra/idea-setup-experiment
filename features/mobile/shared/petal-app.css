@@ -1,0 +1,260 @@
+    /* Shared look for the placeholder "Petal" phone app used by both journeys. */
+    .pa {
+      flex: 1;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      color: var(--text);
+      font-size: 0.82rem;
+    }
+    .pa-full { margin-top: calc(-1 * var(--notch-safe)); }
+
+    .pa-top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 18px 8px;
+    }
+    .pa-back {
+      width: 32px;
+      height: 32px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--label);
+      cursor: pointer;
+    }
+    .pa-back svg { width: 14px; height: 14px; }
+    .pa-top-title { flex: 1; font-size: 0.9rem; font-weight: 800; }
+    .pa-step { font-size: 0.7rem; font-weight: 700; color: var(--muted); }
+
+    .pa-body {
+      flex: 1;
+      min-height: 0;
+      overflow-y: auto;
+      padding: 8px 20px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .pa-foot {
+      padding: 12px 20px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .pa-title { font-size: 1.25rem; font-weight: 800; line-height: 1.25; color: var(--text); }
+    .pa-sub { font-size: 0.8rem; line-height: 1.5; color: #8a7d92; }
+
+    .pa-hero {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      padding: 24px;
+      text-align: center;
+      color: #fff;
+      background:
+        radial-gradient(80% 50% at 50% 20%, rgba(255, 255, 255, 0.35), transparent 70%),
+        linear-gradient(160deg, var(--brand), var(--idea));
+    }
+    .pa-hero .pa-title { color: #fff; font-size: 1.5rem; }
+    .pa-hero .pa-sub { color: rgba(255, 255, 255, 0.88); }
+    .pa-logo {
+      width: 72px;
+      height: 72px;
+      border-radius: 24px;
+      display: grid;
+      place-items: center;
+      background: rgba(255, 255, 255, 0.22);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+    }
+    .pa-logo svg { width: 38px; height: 38px; color: #fff; }
+
+    .pa-field { display: flex; flex-direction: column; gap: 6px; }
+    .pa-field label { font-size: 0.74rem; font-weight: 800; color: var(--label); }
+    .pa-input {
+      height: 42px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 0 14px;
+      display: flex;
+      align-items: center;
+      color: #b7adbd;
+      background: #fdfafc;
+    }
+    .pa-input.is-filled { color: var(--text); }
+
+    .pa-btn {
+      height: 46px;
+      border: 0;
+      border-radius: 999px;
+      font: inherit;
+      font-size: 0.86rem;
+      font-weight: 800;
+      cursor: pointer;
+      color: #fff;
+      background: linear-gradient(135deg, var(--brand), var(--idea));
+      box-shadow: 0 10px 22px rgba(194, 65, 122, 0.25);
+    }
+    .pa-btn.is-light { background: #fff; color: var(--brand-dark); box-shadow: none; }
+    .pa-btn.is-ghost {
+      background: transparent;
+      color: var(--brand-dark);
+      box-shadow: inset 0 0 0 1.5px var(--current-border);
+    }
+    .pa-btn.is-disabled { background: #eadfe9; color: #fff; box-shadow: none; cursor: default; }
+    .pa-link {
+      border: 0;
+      background: none;
+      font: inherit;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--brand-dark);
+      cursor: pointer;
+      text-align: center;
+    }
+    .pa-hero .pa-link { color: #fff; }
+
+    .pa-progress { display: flex; gap: 4px; }
+    .pa-progress i { flex: 1; height: 4px; border-radius: 99px; background: #f1e6ef; }
+    .pa-progress i.is-done { background: var(--brand); }
+
+    .pa-otp { display: flex; justify-content: center; gap: 8px; }
+    .pa-otp span {
+      width: 42px;
+      height: 50px;
+      border-radius: 14px;
+      border: 1.5px solid var(--border);
+      display: grid;
+      place-items: center;
+      font-size: 1.15rem;
+      font-weight: 800;
+      background: #fdfafc;
+    }
+    .pa-otp span.is-filled { border-color: var(--idea-border); color: var(--idea-dark); }
+    .pa-otp.is-error span { border-color: #fecdd3; color: var(--error); background: var(--error-light); }
+
+    .pa-note,
+    .pa-alert {
+      border-radius: 14px;
+      padding: 10px 12px;
+      font-size: 0.74rem;
+      line-height: 1.45;
+    }
+    .pa-note { background: var(--idea-light); color: var(--idea-dark); }
+    .pa-alert { background: var(--error-light); color: var(--error); }
+
+    .pa-upload {
+      border: 1.5px dashed var(--current-border);
+      border-radius: 16px;
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .pa-upload-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: var(--current-light);
+      color: var(--current-dark);
+      flex-shrink: 0;
+    }
+    .pa-upload-icon svg { width: 18px; height: 18px; }
+    .pa-upload strong { display: block; font-size: 0.78rem; }
+    .pa-upload span { font-size: 0.7rem; color: var(--muted); }
+
+    .pa-center {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 24px;
+      text-align: center;
+    }
+    .pa-badge {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--current-light);
+      color: var(--current-dark);
+      box-shadow: 0 0 0 12px rgba(219, 39, 119, 0.08);
+    }
+    .pa-badge svg { width: 40px; height: 40px; }
+
+    .pa-banner {
+      border-radius: 18px;
+      padding: 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--brand), var(--idea));
+    }
+    .pa-banner strong { display: block; font-size: 0.82rem; }
+    .pa-banner span { font-size: 0.7rem; opacity: 0.9; }
+    .pa-banner .pa-btn {
+      height: 32px;
+      padding: 0 12px;
+      font-size: 0.72rem;
+      flex-shrink: 0;
+      box-shadow: none;
+    }
+
+    .pa-section-title { font-size: 0.86rem; font-weight: 800; }
+    .pa-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .pa-card {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .pa-card-art { height: 74px; }
+    .pa-card:nth-child(4n + 1) .pa-card-art { background: linear-gradient(135deg, #fbcfe8, #f9a8d4); }
+    .pa-card:nth-child(4n + 2) .pa-card-art { background: linear-gradient(135deg, #ddd6fe, #c4b5fd); }
+    .pa-card:nth-child(4n + 3) .pa-card-art { background: linear-gradient(135deg, #fde2e4, #fecdd3); }
+    .pa-card:nth-child(4n + 4) .pa-card-art { background: linear-gradient(135deg, #ede9fe, #f5d0fe); }
+    .pa-card-body { padding: 8px 10px 10px; }
+    .pa-card-body strong { display: block; font-size: 0.74rem; }
+    .pa-card-body span { font-size: 0.68rem; color: var(--muted); }
+
+    .pa-tabbar {
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 12px 18px;
+      border-top: 1px solid var(--border);
+      font-size: 0.66rem;
+      font-weight: 700;
+      color: var(--muted);
+    }
+    .pa-tabbar .is-active { color: var(--brand-dark); }
+
+    .pa-hello { display: flex; align-items: center; gap: 10px; }
+    .pa-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #fbcfe8, #ddd6fe);
+    }
+    .pa-hello strong { display: block; font-size: 0.86rem; }
+    .pa-hello span { font-size: 0.7rem; color: var(--muted); }
+
+    html.scenario-error .only-success,
+    html:not(.scenario-error) .only-error { display: none !important; }

@@ -1,0 +1,82 @@
+    /* Shared look for the placeholder "Petal Studio" desktop app. */
+    .st {
+      flex: 1;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      background: #fdfafc;
+      color: var(--text);
+      font-size: 15px;
+    }
+    .st-topbar {
+      height: 64px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0 32px;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+    }
+    .st-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: var(--brand-dark);
+    }
+    .st-brand svg { width: 26px; height: 26px; color: var(--brand); }
+    .st-topbar-spacer { flex: 1; }
+    .st-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #fbcfe8, #ddd6fe);
+    }
+
+    .st-title { font-size: 2rem; font-weight: 800; line-height: 1.2; }
+    .st-sub { font-size: 1rem; line-height: 1.6; color: #8a7d92; }
+    .st-btn {
+      height: 48px;
+      padding: 0 26px;
+      border: 0;
+      border-radius: 999px;
+      font: inherit;
+      font-weight: 800;
+      color: #fff;
+      cursor: pointer;
+      background: linear-gradient(135deg, var(--brand), var(--idea));
+      box-shadow: 0 12px 26px rgba(194, 65, 122, 0.25);
+    }
+    .st-btn:disabled {
+      background: #eadfe9;
+      box-shadow: none;
+      cursor: default;
+    }
+    .st-link {
+      border: 0;
+      background: none;
+      font: inherit;
+      font-weight: 700;
+      color: var(--brand-dark);
+      cursor: pointer;
+    }
+
+    .st-steps { display: flex; align-items: center; gap: 10px; font-size: 0.85rem; font-weight: 700; color: var(--muted); }
+    .st-steps span { display: inline-flex; align-items: center; gap: 8px; }
+    .st-steps i {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-style: normal;
+      font-size: 0.75rem;
+      background: #f1e6ef;
+      color: var(--muted);
+    }
+    .st-steps .is-done i { background: var(--current-light); color: var(--current-dark); }
+    .st-steps .is-current { color: var(--text); }
+    .st-steps .is-current i { background: var(--brand); color: #fff; }
+    .st-steps b { width: 28px; height: 2px; background: #f1e6ef; }

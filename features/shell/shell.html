@@ -1,0 +1,164 @@
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <header class="sidebar-brand">
+        <div class="sidebar-wordmark">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5c1.6 2.4 1.6 5.2 0 7.6-1.6-2.4-1.6-5.2 0-7.6Zm0 11.4c1.6 2.4 1.6 5.2 0 7.6-1.6-2.4-1.6-5.2 0-7.6ZM2.5 12c2.4-1.6 5.2-1.6 7.6 0-2.4 1.6-5.2 1.6-7.6 0Zm11.4 0c2.4-1.6 5.2-1.6 7.6 0-2.4 1.6-5.2 1.6-7.6 0Z" fill="currentColor"/><circle cx="12" cy="12" r="1.8" fill="currentColor"/></svg>
+          Idea Setup Experiment
+        </div>
+        <div class="sidebar-epic-block">
+          <span class="sidebar-kicker">Working on</span>
+          <p class="sidebar-epic-name" id="sidebarEpicName">Sign up</p>
+          <p class="sidebar-epic-desc" id="sidebarEpicDesc">Current journey next to the new idea</p>
+        </div>
+      </header>
+      <div class="panel-stack">
+        <div class="panel-view active" id="panelMenu">
+          <div class="panel-section" id="epicSection">
+            <span class="section-label">Epic</span>
+            <div class="chip-row" id="epicChips"></div>
+          </div>
+
+          <div class="epic-progress">
+            <span class="flow-progress is-old" id="oldFlowProgress">Current 0 / 0</span>
+            <div class="progress-track is-old" id="oldProgressTrack"><div class="progress-fill" id="oldProgressFill"></div></div>
+            <span class="flow-progress" id="flowProgress">Idea 0 / 0</span>
+            <div class="progress-track" id="progressTrack"><div class="progress-fill" id="progressFill"></div></div>
+          </div>
+
+          <div class="journey-row" id="journeyRow" hidden>
+            <button type="button" class="journey-solo is-old" id="soloOldBtn">
+              <svg class="pill-icon" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="5.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 5.2v3l2 1.3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Current
+            </button>
+            <button type="button" class="journey-solo is-new" id="soloNewBtn">
+              <svg class="pill-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.8 9.1 6.2 13.6 7.4 9.1 8.6 8 13 6.9 8.6 2.4 7.4 6.9 6.2Z" fill="currentColor"/></svg>
+              New idea
+            </button>
+            <button type="button" class="journey-back" id="undoSoloBtn" hidden>
+              <svg class="pill-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.2 3.4 5.6 8l4.6 4.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Back
+            </button>
+          </div>
+
+          <div class="nav-row">
+            <button class="btn-prev" id="prevBtn" type="button" aria-label="Previous" disabled>‹</button>
+            <button class="btn-next" id="nextBtn" type="button" aria-label="Next" disabled>›</button>
+          </div>
+
+          <div class="demo-panel" id="demoBar">
+            <span class="demo-kicker">Demo</span>
+            <div class="demo-line" data-demo-control="autoplay">
+              <span class="demo-line-label">Autoplay</span>
+              <p class="demo-line-hint" id="autoplayHint">Walks both phones through the steps</p>
+              <div class="demo-line-actions">
+                <button type="button" id="btnPlay" class="demo-btn" title="Play autoplay" aria-pressed="false">Play</button>
+                <button type="button" id="btnPause" class="demo-btn active" title="Pause autoplay" aria-pressed="true">Pause</button>
+              </div>
+            </div>
+            <div class="demo-line" data-demo-control="speed">
+              <label class="demo-line-label" for="autoplaySpeed">Seconds per step</label>
+              <p class="demo-line-hint">How long each screen stays on</p>
+              <select id="autoplaySpeed" class="demo-speed" title="Seconds per step">
+                <option value="3" selected>3 seconds</option>
+                <option value="5">5 seconds</option>
+                <option value="8">8 seconds</option>
+              </select>
+            </div>
+            <div class="demo-line" data-demo-control="scenario">
+              <span class="demo-line-label">Scenario</span>
+              <p class="demo-line-hint">What the code check returns in the new idea</p>
+              <div class="demo-line-actions">
+                <button type="button" class="demo-btn active" data-scenario="success" aria-pressed="true">Success</button>
+                <button type="button" class="demo-btn is-error" data-scenario="error" aria-pressed="false">Error</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="scope-hint" id="scopeHint">Mobile · current vs idea</div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="stage">
+      <div class="journey-washes" aria-hidden="true">
+        <div class="journey-wash is-old"></div>
+        <div class="journey-wash is-new"></div>
+      </div>
+      <div class="stage-toolbar">
+        <div class="surface-switch" id="surfaceSwitch" role="tablist" aria-label="Preview device">
+          <a class="surface-btn active" role="tab" data-surface="mobile" href="#/mobile/signup" aria-selected="true">Mobile</a>
+          <a class="surface-btn" role="tab" data-surface="website" href="#/website/dashboard-setup" aria-selected="false">Desktop</a>
+        </div>
+      </div>
+      <div class="stage-inner">
+        <div class="phone-column" id="phoneColumn">
+          <div class="phone-unit">
+            <div class="phone-pair">
+              <div class="phone-stage" data-journey="old">
+                <div class="phone-pills">
+                  <button type="button" class="phone-label is-old" data-solo="old">
+                    <svg class="pill-icon" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="5.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 5.2v3l2 1.3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    Current journey
+                  </button>
+                  <button type="button" class="phone-back" data-back hidden>
+                    <svg class="pill-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.2 3.4 5.6 8l4.6 4.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    Back
+                  </button>
+                </div>
+                <button type="button" class="phone-step is-prev is-old" data-step-journey="old" data-step-delta="-1" aria-label="Previous current step">
+                  <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10.2 3.4 5.6 8l4.6 4.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div class="phone-scaler">
+                  <div class="phone is-old">
+                    <div class="phone-screen" id="oldPhoneScreen" data-phone-role="old" aria-label="Current journey"></div>
+                    <div class="phone-btn"></div>
+                  </div>
+                </div>
+                <button type="button" class="phone-step is-next is-old" data-step-journey="old" data-step-delta="1" aria-label="Next current step">
+                  <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5.8 3.4 10.4 8 5.8 12.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </div>
+              <div class="phone-stage" data-journey="new">
+                <div class="phone-pills">
+                  <button type="button" class="phone-label is-new" data-solo="new">
+                    <svg class="pill-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.8 9.1 6.2 13.6 7.4 9.1 8.6 8 13 6.9 8.6 2.4 7.4 6.9 6.2Z" fill="currentColor"/></svg>
+                    New idea
+                  </button>
+                  <button type="button" class="phone-back" data-back hidden>
+                    <svg class="pill-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.2 3.4 5.6 8l4.6 4.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    Back
+                  </button>
+                </div>
+                <button type="button" class="phone-step is-prev is-new" data-step-journey="new" data-step-delta="-1" aria-label="Previous idea step">
+                  <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10.2 3.4 5.6 8l4.6 4.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div class="phone-scaler" id="phoneScaler">
+                  <div class="phone is-new">
+                    <div class="phone-screen" id="phoneScreen" data-phone-role="new" aria-label="New idea"></div>
+                    <div class="phone-btn"></div>
+                  </div>
+                </div>
+                <button type="button" class="phone-step is-next is-new" data-step-journey="new" data-step-delta="1" aria-label="Next idea step">
+                  <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5.8 3.4 10.4 8 5.8 12.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="web-column" id="webColumn" hidden>
+          <div class="web-unit">
+            <div class="web-browser">
+              <div class="web-chrome">
+                <span class="web-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                <div class="web-url" id="webUrl">studio.petal.example</div>
+              </div>
+              <div class="web-screen" id="webScreen"></div>
+            </div>
+          </div>
+        </div>
+        <div class="scope-empty-phone" id="scopeEmptyPhone" hidden>
+          <p>Coming soon</p>
+        </div>
+      </div>
+    </main>
+  </div>

@@ -1,0 +1,49 @@
+    .tp-body {
+      flex: 1;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 0 80px;
+      text-align: center;
+    }
+    .tp-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 280px);
+      gap: 24px;
+      margin: 28px 0 20px;
+    }
+    .tp-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6px;
+      padding: 16px 16px 20px;
+      border: 2px solid var(--border);
+      border-radius: 24px;
+      background: #fff;
+      font: inherit;
+      color: var(--text);
+      text-align: left;
+      cursor: pointer;
+      transition: 0.15s;
+    }
+    .tp-card:hover { border-color: var(--current-border); transform: translateY(-2px); }
+    .tp-card.is-selected {
+      border-color: var(--idea);
+      box-shadow: 0 0 0 4px var(--idea-light), 0 18px 36px rgba(139, 92, 246, 0.16);
+    }
+    .tp-card strong { font-size: 1.05rem; }
+    .tp-card > span:last-child { font-size: 0.85rem; color: var(--muted); }
+    .tp-art {
+      width: 100%;
+      height: 140px;
+      border-radius: 16px;
+      margin-bottom: 8px;
+    }
+    .tp-art.is-rose { background: linear-gradient(135deg, #fde2ec, #f9a8d4); }
+    .tp-art.is-lilac { background: linear-gradient(135deg, #ede9fe, #c4b5fd); }
+    .tp-art.is-blank { background: repeating-linear-gradient(45deg, #fbf5fa 0 10px, #f5edf4 10px 20px); }
+    .tp-actions { display: flex; align-items: center; gap: 24px; }
